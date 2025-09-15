@@ -139,7 +139,7 @@ const CoursesSection = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/courses")
+    fetch("http://deeplearner-production.up.railway.app/api/courses")
       .then((res) => res.json())
       .then((data) => setCourses(data))
       .catch((err) => console.error("❌ Error fetching courses:", err))

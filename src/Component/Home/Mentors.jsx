@@ -21,7 +21,7 @@ export default function Mentors() {
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/mentors")
+    axios.get("http://deeplearner-production.up.railway.app/api/mentors")
       .then(res => {
         setMentors(res.data);
         setFilteredMentors(res.data);
