@@ -15,7 +15,8 @@ import ScrollToTop from './Component/Home/ScrollToTop'
 import About from './Component/Home/About'
 import HelpSupport from './Component/Home/HelpSupport'
 import AuthPage from './Component/Home/AuthPage'
-import Mentor1 from './Component/ui/Mentors1'
+import Mentors1 from './Component/Mentors1'
+
 const App = () => {
   return (
   <>
@@ -31,7 +32,7 @@ const App = () => {
       <Route path='/love' element={<FallOfLove />} />
       <Route path='/verify' element={<VerifyCertificate />} />
       <Route path='/about' element={<About />} />
-      <Route path='/mentor' element={<Mentor1/>} />
+      <Route path='/mentor' element={<Mentors1/>} />
       <Route path='/support' element={<HelpSupport /> } />
       <Route path='/community' element={<AuthPage /> } />
     
@@ -41,7 +42,6 @@ const App = () => {
    
  
   
-    {/* <Mentor1 /> */}
   
   </>
   )
