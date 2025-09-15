@@ -5,7 +5,7 @@ import { Star, Users, Clock, X, BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import courses from "../data/Courses";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
