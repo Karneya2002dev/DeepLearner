@@ -4,7 +4,7 @@ import { Star, CheckCircle2, ChevronDown, ChevronUp, Heart } from "lucide-react"
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import axios from "axios";
-import bgVideo from "../../assets/bubble.mp4";
+
 import CoreValues from "./CoreValues";
 
 gsap.registerPlugin(ScrollTrigger);
