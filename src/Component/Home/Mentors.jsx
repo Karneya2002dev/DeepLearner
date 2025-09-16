@@ -67,7 +67,7 @@ export default function Mentors() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="relative z-10 text-center mb-8 section-heading"
       >
-        <h2 className="text-4xl font-bold">Meet Our <span className="text-pink-500">Mentors</span></h2>
+        <h2 className="text-4xl font-bold">Meet Our <span className="text-[#81007f]">Mentors</span></h2>
         <p className="text-gray-400 mt-2">Industry experts guiding your journey.</p>
       </motion.div> 
 

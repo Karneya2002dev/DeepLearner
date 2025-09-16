@@ -43,12 +43,12 @@ export default function ContactForm() {
                 href="tel:+1234567890"
                 className="text-white hover:underline text-xl font-medium"
               >
-                +1 (234) 567-890
+                +91 63849 42259
               </a>
             </div>
             <div className="flex items-center justify-center">
               <Clock className="text-[#81007f] mr-3" size={24} />
-              <p className="text-gray-300 text-lg">Mon - Fri: 9:00 AM - 6:00 PM</p>
+              <p className="text-gray-300 text-lg">Mon - Fri: 10:00 AM - 6:00 PM</p>
             </div>
           </div>
         </div>

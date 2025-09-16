@@ -28,7 +28,7 @@ const HeroSection = () => {
         {/* Left Text */}
         <div className="w-full lg:w-1/2 max-w-xl space-y-6 text-center lg:text-left pt-24 lg:pt-36">
           <h1 className="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-snug sm:leading-tight">
-            <span className="relative inline-block text-[#ff00ff] animate-glow">
+            <span className="relative inline-block text-[#c9c9c9] animate-glow">
               Learn Today,
             </span>
             <br />
@@ -60,15 +60,7 @@ const HeroSection = () => {
               Explore Courses
             </button>
 
-            <button
-              onClick={() => navigate("/about")}
-              className="px-6 py-3 rounded-full font-semibold text-base sm:text-lg text-white
-                         bg-gray-800 border border-gray-600
-                         hover:bg-gradient-to-r hover:from-[#81007f] hover:to-[#81007f]
-                         hover:border-transparent transition duration-300"
-            >
-              View Stories
-            </button>
+            
           </div>
         </div>
 

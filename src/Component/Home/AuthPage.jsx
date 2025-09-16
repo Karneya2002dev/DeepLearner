@@ -66,7 +66,7 @@ const AuthPage = () => {
     setSuccess("");
 
     try {
-      const res = await axios.post("http://deeplearner-production.up.railway.app//api/verify-otp", { email: emailForOtp, otp });
+      const res = await axios.post("http://deeplearner-production.up.railway.app/api/verify-otp", { email: emailForOtp, otp });
       setSuccess(res.data.message);
       localStorage.setItem("authToken", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));

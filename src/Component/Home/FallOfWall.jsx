@@ -97,7 +97,7 @@ export default function WallOfLove() {
               <div className="flex-1 border-t border-gray-700"></div>
               <Heart
                 ref={heartRef}
-                className="mx-3 text-pink-500 drop-shadow-lg"
+                className="mx-3 text-[#81007f] drop-shadow-lg"
                 size={28}
               />
               <div className="flex-1 border-t border-gray-700"></div>
