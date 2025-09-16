@@ -73,7 +73,7 @@ const CourseDetailsPage = () => {
         courseId: course.id,
       };
 
-      const response = await fetch("http://deeplearner-production.up.railway.app/api/enroll", {
+      const response = await fetch("https://deeplearner-production.up.railway.app/api/enroll", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
