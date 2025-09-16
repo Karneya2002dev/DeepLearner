@@ -30,7 +30,7 @@ const AuthPage = () => {
     setSuccess("");
 
     try {
-      const res = await axios.post("http://deeplearner-production.up.railway.app//api/signup", signupData);
+      const res = await axios.post("http://deeplearner-production.up.railway.app/api/signup", signupData);
       setSuccess(res.data.message);
       setSignupData({ name: "", email: "", password: "" });
       setIsLogin(true);
