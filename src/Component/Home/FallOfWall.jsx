@@ -22,7 +22,7 @@ export default function WallOfLove() {
   // Fetch testimonials
   useEffect(() => {
     axios
-      .get("http://deeplearner-production.up.railway.app/api/testimonials")
+      .get("https://deeplearner-production.up.railway.app/api/testimonials")
       .then((res) => setTestimonials(res.data))
       .catch((err) => console.error("Error fetching testimonials:", err));
   }, []);

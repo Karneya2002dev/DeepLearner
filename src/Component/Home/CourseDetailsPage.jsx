@@ -1,4 +1,3 @@
-// src/Component/Home/CourseDetailsPage.jsx
 import React, { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { Star, Users, Clock, X, BookOpen } from "lucide-react";
@@ -6,26 +5,43 @@ import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-
 gsap.registerPlugin(ScrollTrigger);
 
 const CourseDetailsPage = () => {
   const { id } = useParams();
-  const course = courses.find((c) => c.id === parseInt(id));
-
+  const [course, setCourse] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     currentStatus: "",
   });
-
   const [submitted, setSubmitted] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [loading, setLoading] = useState(false); // 🔄 Loader state
 
   const syllabusRef = useRef(null);
 
+  // ✅ Fetch course by ID
+  useEffect(() => {
+    const fetchCourse = async () => {
+      try {
+        const res = await fetch(
+          `https://deeplearner-production.up.railway.app/api/courses/${id}`
+        );
+        if (!res.ok) throw new Error("Failed to fetch course");
+        const data = await res.json();
+        setCourse(data);
+      } catch (error) {
+        console.error("Error fetching course:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchCourse();
+  }, [id]);
+
+  // ✅ Animate syllabus cards
   useEffect(() => {
     if (syllabusRef.current) {
       const cards = syllabusRef.current.querySelectorAll(".syllabus-card");
@@ -50,19 +66,28 @@ const CourseDetailsPage = () => {
     }
   }, []);
 
-  if (!course)
+  if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-black to-zinc-900 text-white">
+      <div className="min-h-screen flex items-center justify-center text-white bg-black">
+        <p>⏳ Loading course...</p>
+      </div>
+    );
+  }
+
+  if (!course) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-black text-white">
         <p className="text-xl font-semibold">❌ Course not found</p>
       </div>
     );
+  }
 
+  // ✅ Enrollment form handlers
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // 🔄 Start loader
 
     try {
       const payload = {
@@ -73,11 +98,14 @@ const CourseDetailsPage = () => {
         courseId: course.id,
       };
 
-      const response = await fetch("https://deeplearner-production.up.railway.app/api/enroll", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      const response = await fetch(
+        "https://deeplearner-production.up.railway.app/api/enroll",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }
+      );
 
       if (!response.ok) throw new Error("Enrollment failed");
 
@@ -87,19 +115,17 @@ const CourseDetailsPage = () => {
     } catch (error) {
       console.error("Enrollment error:", error);
       alert("Failed to enroll. Please try again.");
-    } finally {
-      setLoading(false); // 🛑 Stop loader
     }
   };
 
   return (
     <motion.div
-      className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-black text-white pb-20 "
+      className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-black text-white pb-20"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      {/* 🔥 Banner */}
+      {/* ✅ Banner */}
       <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden">
         <motion.img
           src={course.image}

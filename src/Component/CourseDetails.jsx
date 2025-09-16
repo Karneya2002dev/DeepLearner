@@ -127,7 +127,7 @@ const CourseDetails = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const res = await axios.get("http://deeplearner-production.up.railway.app/api/courses"); // 🔗 Replace with your backend URL
+        const res = await axios.get("https://deeplearner-production.up.railway.app/api/courses"); // 🔗 Replace with your backend URL
         setCourses(res.data);
       } catch (err) {
         console.error("Error fetching courses:", err);

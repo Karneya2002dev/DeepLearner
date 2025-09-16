@@ -21,16 +21,16 @@ export default function Footer() {
 
           {/* Social Icons */}
           <div className="flex justify-center sm:justify-start space-x-3 mt-5">
-            <a
+            {/* <a
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gray-900 p-2 rounded-md hover:bg-pink-600 transition"
             >
               <Facebook size={18} />
-            </a>
+            </a> */}
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/deeplearner_academy?igsh=MWsxZ2gxZ3N5eGIwaQ=="
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gray-900 p-2 rounded-md hover:bg-pink-600 transition"
@@ -45,14 +45,14 @@ export default function Footer() {
             >
               <Linkedin size={18} />
             </a>
-            <a
+            {/* <a
               href="https://youtube.com"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gray-900 p-2 rounded-md hover:bg-pink-600 transition"
             >
               <Youtube size={18} />
-            </a>
+            </a> */}
           </div>
         </div>
 
@@ -61,7 +61,7 @@ export default function Footer() {
           <h3 className="text-white font-semibold mb-4">COURSES</h3>
           <ul className="space-y-2 text-sm">
             <li><Link to="/courses/data-science">Data Analysis</Link></li>
-            <li><Link to="/courses/full-stack">Mern Stack Development</Link></li>
+            <li><Link to="courses/:id">Mern Stack Development</Link></li>
             <li><Link to="/courses/">Python Full Stack</Link></li>
 
             <li><Link to="/courses/marketing">UI/UX Design</Link></li>
